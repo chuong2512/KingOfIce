@@ -14,6 +14,7 @@ namespace ChuongCustom
             {
                 _score = value;
                 OnScoreChange?.Invoke(value);
+                Data.Player.HighScore = value;
             }
         }
 

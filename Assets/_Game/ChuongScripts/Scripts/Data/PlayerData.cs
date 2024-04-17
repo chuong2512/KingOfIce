@@ -44,6 +44,11 @@ public class PlayerData : BaseData
         get => highScore;
         set
         {
+            if (value < highScore)
+            {
+                return;
+            }
+
             highScore = value;
             GameAction.OnHighScoreChange?.Invoke(value);
         }
@@ -103,7 +108,7 @@ public class PlayerData : BaseData
         time = 3 * 24 * 60 * 60;
 
         _coin = 0;
-        _gem = 100000;
+        _gem = 0;
         _exp = 0;
 
         mapUnlocks = new List<MapRecord>();
@@ -134,7 +139,7 @@ public class PlayerData : BaseData
             });
             mapUnlocks = mapUnlocks.OrderBy(i => i.mapID).ToList();
         }
-        
+
         Save();
     }
 

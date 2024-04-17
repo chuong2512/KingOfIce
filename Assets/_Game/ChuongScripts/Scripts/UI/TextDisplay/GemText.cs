@@ -26,6 +26,6 @@ public class GemText : MonoBehaviour
 
     private void ShowCurrentGem()
     {
-        _tmp.SetText($"{GameDataManager.Instance.playerData.Gem} <sprite=0>");
+        _tmp.SetText($"{GameDataManager.Instance.playerData.Gem}");
     }
 }

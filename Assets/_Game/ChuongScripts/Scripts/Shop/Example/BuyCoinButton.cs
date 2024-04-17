@@ -5,7 +5,7 @@ namespace ChuongCustom
 {
     public class BuyCoinButton : AShopBtn
     {
-        [SerializeField] private int _amount = 1, _price = 500;
+        [SerializeField] private int _amount = 1, _price = 10;
         [SerializeField] private TextMeshProUGUI _amountText, _priceText;
 
         protected override void ShowNotEnoughMoney()
@@ -20,8 +20,8 @@ namespace ChuongCustom
 
         protected override void OnBuySuccess()
         {
-            Data.Player.Gem -= _price;
-            Data.Player.Coin += _amount;
+            Data.Player.Gem += _amount;
+            Data.Player.Coin -= _price;
             ToastManager.Instance.ShowMessageToast("Buy Success!!");
             //todo:
         }

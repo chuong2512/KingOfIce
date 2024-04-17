@@ -5,7 +5,7 @@ namespace ChuongCustom
 {
     public abstract class ButtonPurchase : MonoBehaviour
     {
-        [SerializeField, IAPKey] private string productID;
+        [SerializeField, IAPKey] private string _productID;
         [SerializeField] private Button buttonClick;
         
         private void Awake()
@@ -20,14 +20,14 @@ namespace ChuongCustom
 
         protected virtual void Init()
         {
-            SetupPurchaseData(IAPDataManager.GetData(productID));
+            SetupPurchaseData(IAPDataManager.GetData(_productID));
             buttonClick.onClick.AddListener(OnClick);
         }
 
         protected virtual void OnClick()
         {
             IAPManager.OnPurchaseSuccess = OnPurchaseSuccess;
-            IAPManager.Instance.BuyProductID(productID);
+            IAPManager.Instance.BuyProductID(_productID);
         }
         
         protected abstract void Setup();

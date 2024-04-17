@@ -12,7 +12,7 @@ namespace ChuongCustom
         protected override void SetupPurchaseData(IAPData iapData)
         {
             price.SetText(iapData.price);
-            valueTMP.SetText(iapData.value.ToString());
+            valueTMP.SetText(value.ToString());
         }
     }
 }

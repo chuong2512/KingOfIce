@@ -13,7 +13,7 @@ namespace ChuongCustom
             base.OnOpen();
             transform.DOKill();
             transform.localScale = Vector3.one * 0.5f;
-            transform.DOScale(Vector3.one, 0.2f);
+            transform.DOScale(Vector3.one, 0.2f).SetUpdate(true);
         }
 
         protected virtual void Start()

@@ -61,10 +61,12 @@ namespace ChuongCustom
         /// <summary>
         /// Move tranforms to ClosingPopups when click Close Button
         /// </summary>
-        public virtual void Remove()
+        public virtual bool Remove()
         {
             transform.SetParent(ScreenManager.Instance.ClosingPopups);
             SetActive(false);
+
+            return true;
         }
 
         public virtual void Add()

@@ -25,7 +25,7 @@ namespace ChuongCustom
 
         private void ShowCurrentCoin()
         {
-            _tmp.SetText($"{GameDataManager.Instance.playerData.Coin} <sprite=0>");
+            _tmp.SetText($"{GameDataManager.Instance.playerData.Coin}");
         }
     }
 }

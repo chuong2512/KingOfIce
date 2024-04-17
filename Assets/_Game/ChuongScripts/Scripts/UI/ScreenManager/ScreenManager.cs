@@ -23,7 +23,8 @@ namespace ChuongCustom
         Privacy,
         EquipmentInfo,
         ComingSoon,
-        ExchangeScreen
+        ExchangeScreen,
+        BeforeLose
     }
 
     [DefaultExecutionOrder(-99)]
@@ -36,7 +37,7 @@ namespace ChuongCustom
 
         [SerializeField] private Transform _openingPopups, _closingPopups;
         [SerializeField] private Transform _overlay;
-        
+
         [SerializeField] private ScreenType _firstScreen = ScreenType.HomeScreen;
 
         public Transform OpeningPopups => _openingPopups;
@@ -126,9 +127,15 @@ namespace ChuongCustom
 
             if (childCount >= 2 && _currentScreen != null)
             {
-                _currentScreen.Remove();
-                _currentScreen = _openingPopups.GetChild(childCount - 2).GetComponent<BasePopup>();
-                _currentScreen.Show();
+                if (_currentScreen.Remove())
+                {
+                    _currentScreen = _openingPopups.GetChild(childCount - 2).GetComponent<BasePopup>();
+
+                    if (_currentScreen != null)
+                    {
+                        _currentScreen.Show();
+                    }
+                }
             }
         }
     }

@@ -57,7 +57,6 @@ namespace ChuongCustom
     {
         [IAPKey] public string productID;
         public string price;
-        public int value;
     }
 }
 

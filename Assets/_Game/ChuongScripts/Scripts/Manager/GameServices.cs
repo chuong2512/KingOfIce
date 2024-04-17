@@ -7,7 +7,7 @@ namespace ChuongCustom
         public static readonly Quaternion RotIdentity = Quaternion.Euler(0, 0f, 0f);
     }
 
-    public static class Manager
+    public static class  Manager
     {
         public static ScreenManager ScreenManager => ScreenManager.Instance;
         public static OutGameManager OutGame => OutGameManager.Instance;
