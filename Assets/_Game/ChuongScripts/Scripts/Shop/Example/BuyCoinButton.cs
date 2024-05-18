@@ -10,12 +10,12 @@ namespace ChuongCustom
 
         protected override void ShowNotEnoughMoney()
         {
-            ToastManager.Instance.ShowMessageToast("Not enough gem!!");
+            ToastManager.Instance.ShowMessageToast("Not enough stars!!");
         }
 
         protected override bool IsEnoughResource()
         {
-            return Data.Player.Gem >= _price;
+            return Data.Player.Coin >= _price;
         }
 
         protected override void OnBuySuccess()
